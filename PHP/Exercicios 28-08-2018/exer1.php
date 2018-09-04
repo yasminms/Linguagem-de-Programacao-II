@@ -18,34 +18,47 @@
 	</form>
 
 	<?php
-	if (isset($_POST['enviar'])) {
-		$nome = $_POST['nome']; echo "Nome: ".$nome."<br>";
-		$ano = $_POST['ano']; echo "Ano: ".$ano."<br>";
-		$altura = $_POST['altura']; echo $altura."<br>";
-		$idioma1 = isset($_POST['idioma1']) ? $_POST['idioma1'] : null; 
-		$idioma2 = isset($_POST['idioma2']) ? $_POST['idioma2'] : null; 
-		$idioma3 = isset($_POST['idioma3']) ? $_POST['idioma3'] : null; 
-		if ($idioma1 != null or $idioma2 != null or $idioma3 != null) {
-			echo "Idiomas: <br>";
-			if ($idioma1 != null) {
-				echo $idioma1."<br>";
+		
+		if (isset($_POST['enviar'])) {
+			$nome = $_POST['nome']; echo "Nome: ".$nome."<br>";
+			$ano = $_POST['ano']; echo "Ano: ".$ano."<br>";
+			$altura = $_POST['altura']; echo "Altura: ".$altura."<br>";
+			$idioma1 = isset($_POST['idioma1']) ? $_POST['idioma1'] : null; 
+			$idioma2 = isset($_POST['idioma2']) ? $_POST['idioma2'] : null; 
+			$idioma3 = isset($_POST['idioma3']) ? $_POST['idioma3'] : null; 
+			if ($idioma1 != null or $idioma2 != null or $idioma3 != null) {
+				echo "Idiomas: <br>";
+				if ($idioma1 != null) {
+					echo $idioma1."<br>";
+				}
+				if ($idioma2 != null) {
+					echo $idioma2."<br>";
+				}
+				if ($idioma3 != null) {
+					echo $idioma3."<br>";
+				}
 			}
-			if ($idioma2 != null) {
-				echo $idioma2."<br>";
-			}
-			if ($idioma3 != null) {
-				echo $idioma3."<br>";
-			}
-		}
-		$atividade = isset($_POST['atividade']) ? $_POST['atividade'] : null; 
-		if ($atividade != null) {
-			echo "Atividades: <br>";
-			foreach ($atividade as $v) {
-				echo $v."<br>";
-			}
+			$atividade = isset($_POST['atividade']) ? $_POST['atividade'] : null; 
+			if ($atividade != null) {
+				echo "Atividades: <br>";
+				foreach ($atividade as $v) {
+					echo $v."<br>";
+				}
 
+			}
+			// TESTA FUNCAO
+			echo "Teste da função: "; 
+			vazio($nome);
 		}
-	}
+
+		function vazio($var) {
+			if (isset($var)) {
+				echo $var;
+			} else {
+				$var = null;
+			}
+		}
+		
 	?>
 </body>
 </html>
